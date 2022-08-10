@@ -16,3 +16,31 @@ img {
   display: block;
   max-width: 100%;
 }
+
+#datetime-picker,
+button {
+  font-size: 20px;
+}
+
+.timer {
+  margin-top: 30px;
+}
+
+.field {
+  display: inline-block;
+  text-align: center;
+  font-weight: 500;
+}
+
+.field:not(:last-child) {
+  margin-right: 20px;
+}
+
+.value {
+  font-size: 40px;
+}
+
+.label {
+  display: block;
+  text-transform: uppercase;
+}
