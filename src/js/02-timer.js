@@ -44,7 +44,9 @@ function validateDate(date1, date2) {
   if (date1 > date2) {
     refs.btnStart.disabled = false;
   } else {
-    Notiflix.Notify.failure('Please choose a date in the future');
+    Notiflix.Notify.failure('Please choose a date in the future', {
+      position: 'center-top',
+    });
   }
 }
 
