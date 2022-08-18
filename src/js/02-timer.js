@@ -3,7 +3,7 @@ import flatpickr from 'flatpickr';
 import 'flatpickr/dist/flatpickr.min.css';
 import Notiflix from 'notiflix';
 
-// create references to dom elements
+// create references to DOM elements
 const refs = {
   inputDate: document.querySelector('#datetime-picker'),
   btnStart: document.querySelector('button[data-start]'),

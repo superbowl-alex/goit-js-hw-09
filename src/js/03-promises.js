@@ -1,7 +1,7 @@
 // import required packages
 import Notiflix from 'notiflix';
 
-// create references to dom elements
+// create references to DOM elements
 const refs = {
   form: document.querySelector('.form'),
   delay: document.querySelector('input[name="delay]'),
@@ -19,17 +19,25 @@ function onFormSubmit(e) {
     elements: { delay, step, amount },
   } = e.currentTarget;
   let currentDelay = +delay.value;
-  for (let i = 1; i <= +amount.value; i++) {
-    createPromise(i, currentDelay)
-      .then(({ position, delay }) =>
-        Notiflix.Notify.success(
-          `✅ Fulfilled promise ${position} in ${delay}ms`
+  let currentStep = +step.value;
+  let currentAmount = +amount.value;
+  if (currentAmount >= 0 && currentDelay >= 0 && currentDelay >= 0) {
+    for (let i = 1; i <= currentAmount; i++) {
+      createPromise(i, currentDelay)
+        .then(({ position, delay }) =>
+          Notiflix.Notify.success(
+            `✅ Fulfilled promise ${position} in ${delay}ms`
+          )
         )
-      )
-      .catch(({ position, delay }) =>
-        Notiflix.Notify.failure(`❌ Rejected promise ${position} in ${delay}ms`)
-      );
-    currentDelay += +step.value;
+        .catch(({ position, delay }) =>
+          Notiflix.Notify.failure(
+            `❌ Rejected promise ${position} in ${delay}ms`
+          )
+        );
+      currentDelay += currentStep;
+    }
+  } else {
+    Notiflix.Notify.warning('Input values cannot be negative numbers');
   }
 }
 

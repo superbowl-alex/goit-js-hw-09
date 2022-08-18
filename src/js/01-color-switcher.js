@@ -1,4 +1,4 @@
-// create references to dom elements
+// create references to DOM elements
 const refs = {
   body: document.body,
   btnStart: document.querySelector('button[data-start]'),
